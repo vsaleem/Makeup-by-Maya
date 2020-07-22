@@ -78,7 +78,7 @@ function App() {
                 </div>
             </div>
 
-            <div className='skincare-evaluation'>
+            {/* <div className='skincare-evaluation'>
                 <div>
                     <h1>Skincare Evaluation Questionnaire</h1>
                 </div>
@@ -86,7 +86,10 @@ function App() {
                     <li>  </li>
                 </ul>
 
-            </div>
+            </div> */}
+
+            <UserForm />
+
         </div>
     )
 }
