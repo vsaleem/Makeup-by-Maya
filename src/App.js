@@ -78,7 +78,7 @@ function App() {
                 </div>
             </div>
             {/* this is where the paypal cart needs to go  */}
-        
+            <h1 style={{textAlign: 'center'}}>Skincare Evaluation Questionnaire</h1>
             {/* maybe I have to put this in a div so I can keep it the same size */}
             <div id='user-form'>
                 <UserForm />
