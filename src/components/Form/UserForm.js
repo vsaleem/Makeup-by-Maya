@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import FormUserDetails from './FormUserDetails'
+import FormPersonalDetails from './FormPersonalDetails'
+import Confirm from './Confirm'
+import Success from './Success'
 
 export class UserForm extends Component {
 
@@ -8,8 +11,8 @@ export class UserForm extends Component {
         firstName: '',
         lastName: '',
         email: '',
-        occupation: '',
-        city: ''
+        city: '',
+        bio: ''
     }
 
     // proceed to next step
@@ -33,11 +36,13 @@ export class UserForm extends Component {
 
     render() {
         const { step } = this.state
-        const {firstName, lastName, email, occupation, city} = this.state
-        const values = {firstName, lastName, email, occupation, city}
+        const {firstName, lastName, email, city, bio} = this.state
+        const values = {firstName, lastName, email, city, bio}
 
         switch(step) {
+            
             case 1:
+                // console.log(step);
                 return(
                     <FormUserDetails 
                     nextStep={this.nextStep}
@@ -46,24 +51,28 @@ export class UserForm extends Component {
                     />
                 )
             case 2:
+                // console.log(step);
                 return(
-                    <h1>FormPersonalDetails</h1>
+                    <FormPersonalDetails 
+                    nextStep={this.nextStep}
+                    prevStep={this.prevStep}
+                    handleChange={this.handleChange}
+                    values={values}
+                    />
                 )
             case 3:
+                // console.log(step);
                 return(
-                    <h1>Confirm</h1>
+                    <Confirm 
+                    nextStep={this.nextStep}
+                    prevStep={this.prevStep}
+                    values={values}
+                    />
                 )
             case 4:
-                return(
-                    <h1>Success</h1>
-                )
+                console.log(step);
+                return(<Success />)
         }
-
-        return (
-            <div>
-                
-            </div>
-        )
     }
 }
 

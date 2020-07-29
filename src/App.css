@@ -18,6 +18,26 @@ body{
   color: red;
 }
 
+.form-view{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.form-view > div {
+  width: 80%;
+}
+.form-view > #confirm-view{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
 /* Here is where the main CSS code goes */
 /* *** App *** */
 
@@ -38,6 +58,7 @@ body{
 
 .view-container > div {
   text-align: center;
+  width: 80%
 }
 
 .view-container > .title-holder > h2 {
@@ -46,6 +67,7 @@ body{
 /* targets the intro text p tags */
 .view-container > .intro-text > p {
   padding: 15pt 15pt;
+  
 }
 /* targets headers within divs */
 .view-container > div > div > h2 {
@@ -54,6 +76,35 @@ body{
 /* targets all p tags within divs */
 .view-container > div > div > p {
   padding: 15pt 15pt;
+}
+
+  #user-form{
+  display: flex;
+  flex-direction: column;
+
+}
+
+/* FormUserDetails */
+
+.first.button-flex{
+  width: 80%;
+  height: 8rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* FormPersonalDetails */
+
+.button-flex{
+  width: 80%;
+  height: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  
+
 }
 
 

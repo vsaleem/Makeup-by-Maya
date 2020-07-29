@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css'
-import { UserForm } from './components/UserForm'
+import { UserForm } from './components/Form/UserForm'
 
 
 function App() {
@@ -77,18 +77,12 @@ function App() {
                     <p> I can create a special formula for you at a special price. Quotes will depend on inquiry, but starts at $60.</p>
                 </div>
             </div>
-
-            {/* <div className='skincare-evaluation'>
-                <div>
-                    <h1>Skincare Evaluation Questionnaire</h1>
-                </div>
-                <ul className='skincare-list'>
-                    <li>  </li>
-                </ul>
-
-            </div> */}
-
-            <UserForm />
+            {/* this is where the paypal cart needs to go  */}
+        
+            {/* maybe I have to put this in a div so I can keep it the same size */}
+            <div id='user-form'>
+                <UserForm />
+            </div>
 
         </div>
     )
