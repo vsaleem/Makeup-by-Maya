@@ -2,8 +2,6 @@ import React from 'react'
 import ContinueButton from '../buttons/ContinueButton'
 import BackButton from '../buttons/BackButton'
 
-import Button from '@material-ui/core/Button'
-
 const Question = props => {
     console.log(props)
     return(
@@ -14,7 +12,6 @@ const Question = props => {
             <div className='question button-flex'>
                 <ContinueButton click={props.nextStep} />
                 <BackButton click={props.prevStep} />
-                
             </div>
         </form>
     )

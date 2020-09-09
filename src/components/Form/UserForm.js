@@ -88,7 +88,7 @@ export class UserForm extends Component {
             case 6:
                 return(
                     <Question number='2' 
-                        text='What is your skin type? (Dry, combination,normal, sensitive, or oily)'
+                        text='What is your skin type? (Dry, combination, normal, sensitive, or oily)'
                         nextStep={this.nextStep}
                         prevStep={this.prevStep}
                         name='skin type'
@@ -156,6 +156,12 @@ export class UserForm extends Component {
                         prevStep={this.prevStep}
                         name='anything else'
                     />
+                )
+            case 14:
+                return(
+                    <div className='form-view'>
+                        <h2>Thank you for completing the questionaire</h2>
+                    </div>
                 )
                 
         }
