@@ -1,0 +1,46 @@
+div .quiz{
+    padding: 20px;
+    position: relative ;
+    background: green;
+}
+
+ h3 {
+    padding-bottom: 20px;
+}
+
+div .quizWrapper {
+    padding: 1px;
+    background: pink;
+}
+
+ div .quizWrapper input {
+    padding-left: 175px;
+    padding-bottom: 100px;
+    color: pink;
+}
+
+/* div {
+    position: absolute;
+    top: 50%;
+    padding: 100px
+}
+
+.slides {
+    position: relative;
+}
+
+.slides .slick-prev, 
+.slides .slick-next {
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+
+}
+
+.slides .slick-prev {
+    left: 5%;
+  }
+  
+  .slides .slick-next {
+    right: 5%;
+  }  */
