@@ -4,8 +4,12 @@ import React from "react";
 import "../App.css";
 import Questions from "../components/Slider/questions";
 // import { UserForm } from './components/Form/UserForm'
+import { Row, Col } from "react-bootstrap";
 import SimpleSlider from "../components/Slider";
 import Question from "../components/Form/Question";
+//import products onto page.
+import products from "../products";
+import Product from "../components/Product";
 
 class Serums extends React.Component {
 	state = {
@@ -37,7 +41,7 @@ class Serums extends React.Component {
 						</h2>
 					</div>
 
-					<div className='intro-text'>
+					{/* <div className='intro-text'>
 						<p>
 							Your skin and hair serums are prepared using only natural
 							substances like vitamins, fruit extracts and essential oils —
@@ -73,10 +77,10 @@ class Serums extends React.Component {
 						</div>
 						<div className='serum-order'>
 							{/* here is where the code will go for the serum dropdown */}
-						</div>
-					</div>
+					{/* </div>
+					</div> */}
 
-					<div className='how-to-order-bottom'>
+					{/* <div className='how-to-order-bottom'>
 						<div className='thin-lashes'>
 							<h2>
 								Do You Have Thin Eyelashes or Eyebrows? GiraffeLash is the
@@ -196,15 +200,29 @@ class Serums extends React.Component {
 								Quotes will depend on inquiry, but starts at $60.
 							</p>
 						</div>
-					</div>
+					</div> */}
+
+					{/* Products Div */}
+					<>
+						<h1>Latest Products</h1>
+						<Row>
+							{products.map((product) => (
+								<Col sm={12} md={6} lg={4} xl={3}>
+									<h4>{product.name}</h4>
+									<Product product={product} />
+								</Col>
+							))}
+						</Row>
+					</>
 					{/* this is where the paypal cart needs to go  */}
+
 					<h1 style={{ textAlign: "center" }}>
 						Skincare Evaluation Questionnaire
 					</h1>
-					{/* maybe I have to put this in a div so I can keep it the same size */}
+
 					{/* <div id='user-form'>
-    <UserForm />
-</div> */}
+                        <UserForm />
+                    </div> */}
 
 					<SimpleSlider />
 				</div>
