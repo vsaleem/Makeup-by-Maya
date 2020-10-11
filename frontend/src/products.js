@@ -13,7 +13,7 @@ const products = [
         soundly. Apply a thin layer of serum to eyelids 30 minutes
         before wanting to sleep and watch the magic happen!`,
 		price: 49.99,
-		countInStock: 7,
+		countInStock: 0,
 		rating: 4.9,
 		numReviews: 10,
 	},

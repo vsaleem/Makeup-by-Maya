@@ -203,11 +203,13 @@ class Serums extends React.Component {
 					</div> */}
 
 					{/* Products Div */}
+					{/* Whenever you map through something, and/or create a list
+					you have to create a unique key.  Such as, key={product._id} within the Col. */}
 					<>
 						<h1>Latest Products</h1>
 						<Row>
 							{products.map((product) => (
-								<Col sm={12} md={6} lg={4} xl={3}>
+								<Col key={product._id} sm={12} md={6} lg={4} xl={3}>
 									<h4>{product.name}</h4>
 									<Product product={product} />
 								</Col>
