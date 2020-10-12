@@ -1,47 +1,63 @@
 //@ts-check
-
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../App.css";
 import Questions from "../components/Slider/questions";
 // import { UserForm } from './components/Form/UserForm'
 import { Row, Col } from "react-bootstrap";
 import SimpleSlider from "../components/Slider";
 import Question from "../components/Form/Question";
-//import products onto page.
-import products from "../products";
+//import products onto page to test frontend. Then, remove it when you add your backend.
+// import products from "../products";
 import Product from "../components/Product";
+import axios from "axios";
 
-class Serums extends React.Component {
-	state = {
-		questions: "",
-	};
+// Functional-based component
+const Serums = () => {
+	// Defining State
+	const [products, setProducts] = useState([]);
+	// [what you are naming the state, what you are naming the function to change the state]
+	// Whenever you want to pass in the state as a default, you would pass it in here--> useState([]).
+
+	useEffect(() => {
+		console.log("Making a request to backend server.");
+		// Using Sync Await syntax
+		const fetchProducts = async () => {
+			const { data } = await axios.get("/api/products");
+
+			setProducts(data);
+		};
+		fetchProducts();
+	}, []);
+
+	// state = {
+	// 	questions: "",
+	// };
 
 	// Add logic to operate components on page
 
 	// Create function that loads Question
-	loadNextQuestion = () => {
-		Questions.questions.title
-			.then((res) =>
-				this.setState({
-					question: res.data.questions,
-				})
-			)
-			.catch((err) => console.log(err));
-		console.log("A question appeared!!");
-	};
+	// loadNextQuestion = () => {
+	// 	Questions.questions.title
+	// 		.then((res) =>
+	// 			this.setState({
+	// 				question: res.data.questions,
+	// 			})
+	// 		)
+	// 		.catch((err) => console.log(err));
+	// 	console.log("A question appeared!!");
+	// };
 
 	// Add render() to return tags, elements & components onto page
-	render() {
-		return (
-			<>
-				<div className='view-container'>
-					<div className='title-holder'>
-						<h2 className='title-text'>
-							Serums That Give You Glowing, Gorgeous Results
-						</h2>
-					</div>
+	return (
+		<>
+			<div className='view-container'>
+				<div className='title-holder'>
+					<h2 className='title-text'>
+						Serums That Give You Glowing, Gorgeous Results
+					</h2>
+				</div>
 
-					{/* <div className='intro-text'>
+				{/* <div className='intro-text'>
 						<p>
 							Your skin and hair serums are prepared using only natural
 							substances like vitamins, fruit extracts and essential oils —
@@ -77,10 +93,10 @@ class Serums extends React.Component {
 						</div>
 						<div className='serum-order'>
 							{/* here is where the code will go for the serum dropdown */}
-					{/* </div>
+				{/* </div>
 					</div> */}
 
-					{/* <div className='how-to-order-bottom'>
+				{/* <div className='how-to-order-bottom'>
 						<div className='thin-lashes'>
 							<h2>
 								Do You Have Thin Eyelashes or Eyebrows? GiraffeLash is the
@@ -202,35 +218,34 @@ class Serums extends React.Component {
 						</div>
 					</div> */}
 
-					{/* Products Div */}
-					{/* Whenever you map through something, and/or create a list
+				{/* Products Div */}
+				{/* Whenever you map through something, and/or create a list
 					you have to create a unique key.  Such as, key={product._id} within the Col. */}
-					<>
-						<h1>Latest Products</h1>
-						<Row>
-							{products.map((product) => (
-								<Col key={product._id} sm={12} md={6} lg={4} xl={3}>
-									<h4>{product.name}</h4>
-									<Product product={product} />
-								</Col>
-							))}
-						</Row>
-					</>
-					{/* this is where the paypal cart needs to go  */}
+				<>
+					<h1>Latest Products</h1>
+					<Row>
+						{products.map((product) => (
+							<Col key={product._id} sm={12} md={6} lg={4} xl={3}>
+								<h4>{product.name}</h4>
+								<Product product={product} />
+							</Col>
+						))}
+					</Row>
+				</>
+				{/* this is where the paypal cart needs to go  */}
 
-					<h1 style={{ textAlign: "center" }}>
-						Skincare Evaluation Questionnaire
-					</h1>
+				<h1 style={{ textAlign: "center" }}>
+					Skincare Evaluation Questionnaire
+				</h1>
 
-					{/* <div id='user-form'>
+				{/* <div id='user-form'>
                         <UserForm />
                     </div> */}
 
-					<SimpleSlider />
-				</div>
-			</>
-		);
-	}
-}
+				<SimpleSlider />
+			</div>
+		</>
+	);
+};
 
 export default Serums;

@@ -1,0 +1,23 @@
+{
+	"name": "makeup-by-maya",
+	"version": "1.0.0",
+	"description": "Permanent Makeup by Maya - MERN site",
+	"main": "server.js",
+	"scripts": {
+		"start": "node backend/server",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/vsaleem/Makeup-by-Maya.git"
+	},
+	"author": "Victoria A Saleem",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/vsaleem/Makeup-by-Maya/issues"
+	},
+	"homepage": "https://github.com/vsaleem/Makeup-by-Maya#readme",
+	"dependencies": {
+		"express": "^4.17.1"
+	}
+}
