@@ -1,16 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Row, Col, Image, ListGroup, Card, Button } from "react-bootstrap";
 import Rating from "../components/Rating";
-import products from "../products";
+import axios from 'axios'
 
 const ProductScreen = ({ match }) => {
-	// Created a const container to bring in the products array;
-	// then, used .find method to find products.
-	// (For each product with a product._id that is equal to
-	// the params.id in the URL.)
-	// You can use the .match method to locate props.
-	const product = products.find((p) => p._id === match.params.id);
+	// Set up state
+	const [product, setProduct] = useState({})
+
+	// Set up useEffect
+	useEffect(() => {
+		// Using Async Await syntax
+		const fetchProduct = async () => {
+			// To GET single product by id by using the url;
+			// Change the route GET request to backticks``,
+			// Then add tenary operator variable ${match.params.id}
+			const { data } = await axios.get(`/api/products/${match.params.id}`);
+
+			setProduct(data);
+		}
+		// Call function
+		fetchProduct();
+	}, [])
 
 	return (
 		<>
