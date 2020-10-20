@@ -5,7 +5,6 @@
 // Make a product array of objects.
 const products = [
 	{
-		_id: "1",
 		name: "Sleep Magic Serum",
 		image: "/public/images/",
 		category: "Serums",
@@ -18,7 +17,6 @@ const products = [
 		numReviews: 10,
 	},
 	{
-		_id: "2",
 		name: "Sleep Magic Serum",
 		image: "/public/images/",
 		category: "Serums",
@@ -31,7 +29,6 @@ const products = [
 		numReviews: 10,
 	},
 	{
-		_id: "3",
 		name: "Sleep Magic Serum",
 		image: "/public/images/",
 		category: "Serums",
@@ -44,7 +41,6 @@ const products = [
 		numReviews: 10,
 	},
 	{
-		_id: "4",
 		name: "Sleep Magic Serum",
 		image: "/public/images/",
 		category: "Serums",
