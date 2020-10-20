@@ -1,13 +1,29 @@
-const express = require("express");
+import express from "express"
+
 // Bring in products from backend/data
-const products = require("./data/products");
+import products from "./data/products.js"
+
+// Bring in dotenv and configure database
+import dotenv from "dotenv"
+
+// Bring in to connect database
+import connectDB from './config/db.js'
+
+// OPTIONAL: Allows colors to change in console.
+import colors from 'colors'
+
+// Set up environment config variable
+dotenv.config();
+
+// Invoke database connection
+connectDB();
 
 // Initialized Express by bringing it in as, "app".
 const app = express();
 
 // Creates a route to the homepage. Sends response to client in the frontend sphere.
 app.get("/", (req, res) => {
-	res.send("API is running....");
+	res.send("API is running.............");
 });
 
 // Creates an api route to products. A response will GET a json array of products.
@@ -24,7 +40,12 @@ app.get("/api/products/:id", (req, res) => {
 	res.json(product);
 });
 
-app.listen(5000, console.log("Server is running on port 5000."));
+
+
+// Add access PORT
+const PORT = process.env.PORT || 5000
+
+app.listen(PORT, console.log(`Server is running in ${process.env.NODE_ENV} mode on port ${PORT}.`.rainbow.bgBrightWhite.underline.bold));
 
 
 // NEXT STEP:
