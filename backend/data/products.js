@@ -11,6 +11,7 @@ const products = [
 		description: `SLEEP MAGIC contains chamomile extracts that help you rest
         soundly. Apply a thin layer of serum to eyelids 30 minutes
         before wanting to sleep and watch the magic happen!`,
+		brand: " none",
 		price: 49.99,
 		countInStock: 0,
 		rating: 4.9,
@@ -23,6 +24,7 @@ const products = [
 		description: `SLEEP MAGIC contains chamomile extracts that help you rest
         soundly. Apply a thin layer of serum to eyelids 30 minutes
         before wanting to sleep and watch the magic happen!`,
+		brand: " none",
 		price: 49.99,
 		countInStock: 7,
 		rating: 4.9,
@@ -35,6 +37,7 @@ const products = [
 		description: `SLEEP MAGIC contains chamomile extracts that help you rest
         soundly. Apply a thin layer of serum to eyelids 30 minutes
         before wanting to sleep and watch the magic happen!`,
+		brand: " none",
 		price: 49.99,
 		countInStock: 7,
 		rating: 4.9,
@@ -47,6 +50,7 @@ const products = [
 		description: `SLEEP MAGIC contains chamomile extracts that help you rest
         soundly. Apply a thin layer of serum to eyelids 30 minutes
         before wanting to sleep and watch the magic happen!`,
+		brand: " none",
 		price: 49.99,
 		countInStock: 7,
 		rating: 4.9,
