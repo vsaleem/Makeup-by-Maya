@@ -59,7 +59,7 @@ const products = [
 ];
 
 // ES Modules Version
-// export default products;
+export default products;
 
 // Common JS Version
-module.exports = products;
+// module.exports = products;
