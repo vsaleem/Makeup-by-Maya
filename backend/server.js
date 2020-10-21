@@ -1,12 +1,15 @@
 import express from "express"
 // Bring in products from backend/data
-import products from "./data/products.js"
+// import products from "./data/products.js"
+
 // Bring in dotenv and configure database
 import dotenv from "dotenv"
 // Bring in to connect database
 import connectDB from './config/db.js'
 // OPTIONAL: Allows colors to change in console.
 import colors from 'colors'
+
+import productRoutes from "./routes/productRoutes.js"
 
 
 // Set up environment config variable
@@ -24,20 +27,20 @@ app.get("/", (req, res) => {
 });
 
 // Creates an api route to products. A response will GET a json array of products.
-app.get("/api/products", (req, res) => {
-	res.json(products);
-});
+// app.get("/api/products", (req, res) => {
+// 	res.json(products);
+// });
 
 // Creates a route to product by id.	
 // import product by id; For each product, that is equal to product by id, 
 // find product by request, params, by id.
 // A response will FETCH an single json object of const product, by id.
-app.get("/api/products/:id", (req, res) => {
-	const product = products.find((p) => p._id === req.params.id);
-	res.json(product);
-});
+// app.get("/api/products/:id", (req, res) => {
+// 	const product = products.find((p) => p._id === req.params.id);
+// 	res.json(product);
+// });
 
-
+app.use('/api/products', productRoutes)
 
 // Add access PORT
 const PORT = process.env.PORT || 5000
