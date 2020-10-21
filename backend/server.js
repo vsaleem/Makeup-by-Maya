@@ -11,6 +11,8 @@ import colors from 'colors'
 
 import productRoutes from "./routes/productRoutes.js"
 
+import { notFound, errorHandler } from './middleware/errorMiddleware.js'
+
 
 // Set up environment config variable
 dotenv.config();
@@ -20,6 +22,12 @@ connectDB();
 
 // Initialized Express by bringing it in as, "app".
 const app = express();
+
+
+app.use((req, res, next) => {
+	console.log(`'HELLO! USER HAS MADE REQUEST TO URL.' ${req.originalUrl}`.yellow.bold.underline)
+	next()
+})
 
 // Creates a route to the homepage. Sends response to client in the frontend sphere.
 app.get("/", (req, res) => {
@@ -41,6 +49,10 @@ app.get("/", (req, res) => {
 // });
 
 app.use('/api/products', productRoutes)
+
+app.use(notFound)
+
+app.use(errorHandler)
 
 // Add access PORT
 const PORT = process.env.PORT || 5000
