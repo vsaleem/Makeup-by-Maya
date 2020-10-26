@@ -1,5 +1,6 @@
 //@ts-check
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from 'react-redux'
 import "../App.css";
 import Questions from "../components/Slider/questions";
 // import { UserForm } from './components/Form/UserForm'
@@ -9,30 +10,25 @@ import Question from "../components/Form/Question";
 //import products onto page to test frontend. Then, remove it when you add your backend.
 // import products from "../products";
 import Product from "../components/Product";
-import axios from "axios";
+// import axios from "axios";
+import { listProducts } from '../Actions/productActions'
+import Message from '../components/Message'
+import Loader from '../components/Loader'
 
 // Functional-based component style
 const Serums = () => {
-	// Defining State
-	const [products, setProducts] = useState([]);
-	// [what you are naming the state, what you are naming the function to change the state]
-	// Whenever you want to pass in the state as a default, you would pass it in here--> useState([]).
+	const dispatch = useDispatch()
+
+	const productList = useSelector(state => state.productList)
+	const { loading, error, products } = productList
 
 	useEffect(() => {
-		console.log("Making a request to backend server.");
-		// Using Async Await syntax
-		const fetchProducts = async () => {
-			const { data } = await axios.get("/api/products");
-
-			setProducts(data);
-		};
-		// Call function
-		fetchProducts();
+		dispatch(listProducts())
 	}, 
 	// Pass in an array of dependencies to useEffect.
 	// Whenever the value inside the []s changes, 
 	// useEffect will take affect.
-	[]);
+	[dispatch]);
 
 	// state = {
 	// 	questions: "",
@@ -68,7 +64,9 @@ const Serums = () => {
 					Such as, key={product._id} within the Col. */}
 				<>
 					<h1>Latest Products</h1>
-					<Row>
+					{loading ? <Loader />
+					: error ? <Message variant='danger'>{error}</Message> 
+					:<Row>
 						{products.map((product) => (
 							<Col key={product._id} sm={12} md={6} lg={4} xl={3}>
 								<h4>{product.name}</h4>
@@ -76,6 +74,8 @@ const Serums = () => {
 							</Col>
 						))}
 					</Row>
+
+					}
 				</>
 				{/* this is where the paypal cart needs to go  */}
 

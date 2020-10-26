@@ -1,17 +1,22 @@
 import express from "express"
-// Bring in products from backend/data
-// import products from "./data/products.js"
 
 // Bring in dotenv and configure database
 import dotenv from "dotenv"
+
 // Bring in to connect database
 import connectDB from './config/db.js'
-// OPTIONAL: Allows colors to change in console.
-import colors from 'colors'
 
 import productRoutes from "./routes/productRoutes.js"
 
 import { notFound, errorHandler } from './middleware/errorMiddleware.js'
+
+// OPTIONAL: Allows colors to change in console.
+import colors from 'colors'
+
+// Bring in products from backend/data
+// import products from "./data/products.js"
+
+/////////////////////////////////////////////////////////////
 
 
 // Set up environment config variable

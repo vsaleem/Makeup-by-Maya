@@ -1,34 +1,34 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from 'react-redux'
 import { Row, Col, Image, ListGroup, Card, Button } from "react-bootstrap";
 import Rating from "../components/Rating";
-import axios from 'axios'
+// import axios from 'axios'
+import { listProductDetails } from '../Actions/productActions'
+import { productDetailsReducer } from "../Reducers/productReducers";
+import Message from '../components/Message'
+import Loader from '../components/Loader'
+
 
 const ProductScreen = ({ match }) => {
-	// Set up state
-	const [product, setProduct] = useState({})
+	const dispatch = useDispatch()
 
-	// Set up useEffect
+	const productDetails = useSelector(state => state.productDetails)
+	const { loading, error, product } = productDetails
+
 	useEffect(() => {
-		// Using Async Await syntax
-		const fetchProduct = async () => {
-			// To GET single product by id by using the url;
-			// Change the route GET request to backticks``,
-			// Then add tenary operator variable ${match.params.id}
-			const { data } = await axios.get(`/api/products/${match.params.id}`);
+		dispatch(listProductDetails(match.params.id))
 
-			setProduct(data);
-		}
-		// Call function
-		fetchProduct();
-	}, [match])
+	}, [dispatch, match])
 
 	return (
 		<>
 			<Link className='btn btn-light my-3' to='/serums'>
 				Go Back
 			</Link>
-			<Row>
+			{loading ? <Loader /> 
+			: error ? <Message variant='danger'>{error}</Message>
+			:<Row>
 				<Col md={6}>
 					<Image src={product.image} alt={product.name} fluid />
 				</Col>
@@ -75,6 +75,7 @@ const ProductScreen = ({ match }) => {
 					</Card>
 				</Col>
 			</Row>
+ 			}
 		</>
 	);
 };
