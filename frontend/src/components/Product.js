@@ -11,7 +11,7 @@ import Rating from "../components/Rating";
 // Templete literals are being using throughout the page.
 const Product = ({ product }) => {
 	return (
-		<Card className='my-3 p-3 rounded'>
+		<Card className='my-1 p-1 rounded'>
 			<Link to={`/product/${product._id}`}>
 				<Card.Img src={product.image} variant='top' />
 			</Link>

@@ -8,7 +8,12 @@ const Footer = () => {
 			<Container>
 				<Row>
 					<Col className='text-center py-3'>
-						Copyright &copy; Permanent Makeup by Maya
+						&copy; Copyright 2021 Permanent Makeup by Maya - All Rights Reserved
+						<a
+							href='https://mailchi.mp/853fccd99bde/insidersignup'
+							target='_blank'>
+							<span className='mbr-iconfont mbr-iconfont-social mbri-alert'></span>
+						</a>
 					</Col>
 				</Row>
 			</Container>

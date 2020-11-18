@@ -1,0 +1,154 @@
+.gee-popup {
+	overflow: auto;
+}
+.popup {
+	font-family: 'Roboto';
+	position: fixed;
+	z-index: 101010;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	background: rgba(0,0,0,0.70);
+}
+	.popup-inner {
+		position: absolute;
+		left: 30%;
+		right: 30%;
+		top: 20%;
+		/*bottom: 30%;*/
+		min-height: 40px;
+		height: auto;
+		background: white;
+		padding: 23px;
+		text-align: center;
+	}
+		.popup-inner .popup-header {
+			text-align: center;
+			
+		}
+			.popup-inner .popup-header .popup-title {
+				color: #09afdf;
+				font-weight: 300;
+				text-transform: uppercase;
+			}
+			.popup-inner .btn {
+				background: #09afdf;
+				border-radius: 0px;
+				font-weight: 300;
+				text-transform: uppercase;
+			}
+			.popup-inner p {
+				margin: 20px 0px;
+				font-size: 19px;
+				font-weight: 300;
+			}
+			.popup-inner .input {margin: 20px 0px;}
+			.popup-inner .input .form-control {
+				border-radius: 0px;
+				height: 40px;
+			}
+			.popup-inner .close-button {
+				float: right;
+				position: absolute;
+				top: 0;
+				right: 0;
+				background: #09afdf;
+				width: 30px;
+				height: 30px;
+				color: white;
+				padding: 2px;
+				padding-left: 10px;
+				border-bottom-left-radius: 100px;
+				cursor: pointer;
+			}
+			.popup-inner .close-button:hover,
+			.popup-inner .close-button:focus {
+				text-decoration: none;
+			}
+
+.popup {
+	display: none;
+}
+html.active-poup {
+	overflow-y: hidden;
+}
+html.active-poup .popup {
+	display: block;
+}
+/*media*/
+@media (max-width: 965px) {
+	.popup-inner {
+		left: 20%;
+		right: 20%;
+	}
+}
+@media (max-width: 640px) {
+	.popup-inner {
+		left: 10%;
+		right: 10%;
+		top: 7%;
+	}
+}
+@media (max-width: 280px) {
+	.popup-inner {
+		left: 1%;
+		right: 1%;
+	}
+}
+/*! CSS Used from: Embedded */
+label{display:block;width:auto;margin-top:8px;font-weight:bold;}
+.mergeRow{padding:0 0 6px 0!important;clear:both;}
+.field-group{position:relative;margin:3px 0 12px 0;overflow:hidden;background:transparent!important;}
+input,textarea{display:block;margin:0;padding:10px;background:#fff;width:100%;border:2px solid #d0d0d0!important;border-radius:3px;-webkit-appearance:none;}
+.field-group input,textarea{font-size:14px;}
+textarea{font:14px/18px 'Helvetica', Arial, sans-serif;width:100%;height:150px;overflow:auto;}
+input:focus,textarea:focus{border-color:#5d5d5d!important;outline:none;}
+.indicates-required{text-align:right;}
+.indicates-required span{font-size:150%;font-weight:bold;display:inline!important;}
+label.radio{font-weight:normal;position:relative;line-height:24px;}
+.radio input{width:auto!important;display:inline-block;margin-right:5px;padding:0;border:none;background-color:transparent;}
+::-webkit-input-placeholder{color:#ababab;}
+:-moz-placeholder{color:#ababab;opacity:1;}
+::-moz-placeholder{color:#ababab;opacity:1;}
+:-ms-input-placeholder{color:#ababab;}
+input,textarea{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;}
+.field-shift{left:-9999px;position:absolute;}
+@media only screen{
+.radio{margin:9px 0 0 0;padding:0;}
+.radio input{position:absolute;width:24px;height:24px;overflow:hidden;margin:0;padding:0;outline:0;opacity:0;}
+.radio input + span{display:block;border-radius:3px;padding:6px 6px 6px 38px;}
+.radio:hover span,.radio input:focus + span{background:rgba(0,0,0,.05);}
+.radio input + span:before{display:block;position:absolute;top:6px;left:6px;width:24px;height:24px;background:url(https://permanentmakeupbymaya.us19.list-manage.com/images/icons/signup-sprite.png) no-repeat;content:" ";vertical-align:top;}
+.radio input:focus + span:before{background-position:0 -30px;}
+.radio input:checked + span:before{background-position:0 -60px;}
+.radio input:checked:focus + span:before{background-position:-0 -90px;}
+}
+@media (-webkit-min-device-pixel-ratio: 1.5),(min-resolution: 1.5dppx){
+.radio input + span:before{background-image:url(https://permanentmakeupbymaya.us19.list-manage.com/images/icons/signup-sprite-2x.png);background-size:24px;}
+}
+/*! CSS Used from: Embedded */
+p{padding:0 0 10px 0;}
+h3{margin:0 0 12px 0;}
+.wrapper{width:auto;margin:0 auto 10px auto;text-align:left;}
+input.formEmailButton{border:none!important;}
+.formEmailButton{display:inline-block;font-weight:500;font-size:16px;line-height:42px;font-family:'Helvetica', Arial, sans-serif;width:auto;white-space:nowrap;height:42px;margin:12px 5px 12px 0;padding:0 22px;text-decoration:none;text-align:center;cursor:pointer;border:0;border-radius:3px;vertical-align:top;}
+.rounded6{border-radius:6px;}
+.clear{clear:both;}
+h1{font-size:28px;line-height:110%;margin-bottom:30px;margin-top:0;padding:0;}
+#templateContainer{background-color:none;}
+#templateBody{background-color:#ffffff;}
+.bodyContent{line-height:150%;font-family:Helvetica;font-size:14px;color:#333333;padding:20px;}
+.formEmailButton:link,.formEmailButton:active,.formEmailButton:visited,.formEmailButton{background-color:#5d5d5d!important;color:#ffffff!important;}
+.formEmailButton:hover{background-color:#444444!important;color:#ffffff!important;}
+label{line-height:150%;font-family:Helvetica;font-size:16px;color:#5d5d5d;}
+.field-group input,textarea{font-family:Helvetica;color:#5d5d5d!important;}
+.asterisk{color:#cc6600;font-size:20px;}
+label .asterisk{visibility:hidden;}
+.indicates-required{display:none;}
+@media (max-width: 620px){
+.wrapper{width:auto!important;max-width:600px!important;padding:0 10px;}
+}
+@media (max-width: 620px){
+#templateContainer,#templateBody{width:100%!important;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;}
+}

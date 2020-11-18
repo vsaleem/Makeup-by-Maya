@@ -7,7 +7,10 @@ import Footer from "./components/Footer";
 import "./App.css";
 // import { UserForm } from './components/Form/UserForm'
 import Serums from "./pages/Serums";
-import ProductScreen from "./components/ProductScreen";
+import ProductScreen from "./pages/ProductScreen";
+import CartScreen from "./pages/CartScreen";
+import Home from "./pages/HomeScreen/Home";
+import LoginScreen from "./pages/LoginScreen";
 
 function App() {
 	return (
@@ -16,8 +19,11 @@ function App() {
 				<Header />
 				<main className='py-3'>
 					<Container>
+						<Route path='/login' component={LoginScreen} />
 						<Route path='/serums' component={Serums} exact />
 						<Route path='/product/:id' component={ProductScreen} />
+						<Route path='/cart/:id?' component={CartScreen} />
+						<Route path='/' component={Home} exact />
 					</Container>
 				</main>
 				<Footer />
